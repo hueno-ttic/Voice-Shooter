@@ -1,0 +1,15 @@
+/** font */
+@font-face {
+    font-family: Aldrich;
+    src: url('./assets/font/Aldrich-Regular.ttf');
+}
+
+@font-face {
+    font-family: GenEiLateGoN;
+    src: url('./assets/font/GenEiLateGoN_v2.ttf');
+}
+
+@font-face {
+    font-family: GenEiLateMinN;
+    src: url('./assets/font/GenEiLateMinN_v2.ttf');
+}

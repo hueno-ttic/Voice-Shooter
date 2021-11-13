@@ -1,0 +1,54 @@
+{
+    "name": "voice-shooter",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Voice Shooterはレーンの色と歌詞の色が一致するようにステージ上のライブアーティスト(ミク、ルカ)を移動させて観客に歌詞を届けてスコアを伸ばしていくゲームです。",
+    "scripts": {
+        "start": "parcel src/index.html --open",
+        "predev": "ts-node ./src/scripts/build_fft.ts",
+        "dev:nocache": "parcel src/index.html --dist-dir docs --open",
+        "prebuild": "ts-node ./src/scripts/build_fft.ts",
+        "build": "parcel build src/index.html --public-url ./ --dist-dir docs --no-source-maps",
+        "clean": "del-cli .parcel-cache dev docs",
+        "precommit": "lint-staged",
+        "lint": "prettier --check ./src/**/*.ts ./src/*.ts",
+        "lint:write": "prettier --write ./src/**/*.ts ./src/*.ts"
+    },
+    "keywords": [
+        "textalive"
+    ],
+    "author": "TTIC",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^16.9.6",
+        "axios": "^0.21.4",
+        "phaser": "^3.24.1",
+        "textalive-app-api": "0.3.0",
+        "ts-node": "^10.2.1"
+    },
+    "devDependencies": {
+        "abortcontroller-polyfill": "1.7.3",
+        "del-cli": "^4.0.1",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "@parcel/runtime-js": "^2.0.1",
+        "@parcel/config-default": "^2.0.1",
+        "@parcel/resolver-glob": "^2.0.1",
+        "@parcel/transformer-js": "^2.0.1",
+        "@parcel/transformer-inline-string": "^2.0.1",
+        "@parcel/transformer-worklet": "^2.0.1",
+        "@parcel/transformer-raw": "^2.0.1",
+        "@parcel/transformer-typescript-tsc": "^2.0.1",
+        "parcel-transformer-svelte": "^1.1.2",
+        "parcel": "^2.0.1",
+        "prettier": "^2.3.2",
+        "typescript": "^4.3.5"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "tsc --noEmit",
+            "prettier --write ./src/**/*.ts ./src/*.ts",
+            "git add"
+        ]
+    }
+}

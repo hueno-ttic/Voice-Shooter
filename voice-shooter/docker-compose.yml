@@ -1,0 +1,10 @@
+version: '2'
+services:
+  textalive:
+    image: node
+    command: /bin/sh -c "npm run dev"
+    working_dir: /mount/app
+    ports:
+      - 1234:1234
+    volumes:
+      - .:/mount/app

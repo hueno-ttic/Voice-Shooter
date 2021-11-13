@@ -1,0 +1,84 @@
+#content {
+    z-index: 10;
+}
+
+#overlay {
+    z-index: 20;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container p {
+    font-size: 4vw;
+    padding: 1em;
+    text-align: center;
+    user-select: none;
+}
+
+#media {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#meta {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#control {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#control>button {
+    margin-right: 5px;
+}
+
+#control>button:last-child {
+    margin-right: 0;
+}
+
+#video {
+    /*天地中央配置*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*縦横幅指定*/
+    width: 177.77777778vh;
+    /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+    height: 56.25vw;
+    /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+/*見出し設定*/
+
+h1 {
+    /*要素の配置*/
+    position: absolute;
+    /*要素を天地中央寄せ*/
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /*見た目の調整*/
+    color: #fff;
+    text-shadow: 0 0 15px #666;
+}
